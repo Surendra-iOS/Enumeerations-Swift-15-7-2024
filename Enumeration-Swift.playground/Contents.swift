@@ -39,8 +39,7 @@ case .rabbit:
 case .hedgeHog:
     "This is hedgehog"
     break
-default:
-    "This is something else"
+
 }
 
 enum Shortcut {
@@ -111,5 +110,39 @@ case let .song(
     break
 }
 
+if case let .wwwUrl(path) = wwwApple{
+    path
+}
 
+let withoutYou = Shortcut.song(
+    artist:  "Symphony X",
+    songName: "Without You")
+
+if case let .song(_ , songName) = withoutYou {
+    songName
+}
+
+enum Vehicle {
+    case car(manufacturer: String, model: String)
+    case bike(manufacturer: String, yearMade: Int)
+}
+
+let car = Vehicle.car(
+    manufacturer: "Toyota",
+    model: "Fortuner")
+
+
+switch car {
+case let .car(manufacturer, _ ):
+    manufacturer
+    break
+case let .bike( manufacturer, _):
+    manufacturer
+    break
+}
+
+
+let bike = Vehicle.bike(
+    manufacturer: "Hero",
+    yearMade: 1998)
 
